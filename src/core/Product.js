@@ -47,7 +47,7 @@ function Product(props) {
         <div className="col-4">
           <legend>Related Products</legend>
           {relatedProduct.map((p, i) => (
-            <div className="mb-3"> <Card key={i} product={p}/> </div>
+            <div key={i} className="mb-3"> <Card  product={p}/> </div>
           ))}
         </div>
       </div>

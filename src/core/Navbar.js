@@ -3,6 +3,8 @@ import {Link, withRouter} from 'react-router-dom';
 import {signout,isAuthenticated} from '../auth';
 import SearchForm from './SearchForm'
 import Search from './Search'
+import {itemTotal} from './CartHelpers';
+
 
 const isActive = (history,path) => {
   if(history.location.pathname === path){
@@ -24,18 +26,26 @@ function Navbar({history}) {
         <div className="collapse navbar-collapse" id="navbarColor03">
           <ul className="navbar-nav mr-auto">
 
-          <li className="nav-item active">
-              <Link className="nav-link" style={isActive(history,'/shop')} to="/shop">Shop <span className="sr-only">(current)</span></Link>
+            <li className="nav-item active">
+              <Link className="nav-link" style={isActive(history,'/shop')} to="/shop">Shop 
+              <span className="sr-only">(current)</span></Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" style={isActive(history,'/cart')} to="/cart">Cart {' '}
+              <sup><small className="cart-badge">{itemTotal()}</small></sup>
+              <span className="sr-only">(current)</span></Link>
             </li>
 
             {isAuthenticated() && isAuthenticated().user.role === 0 && (
               <li className="nav-item active">
-              <Link className="nav-link" style={isActive(history,'/user/dashboard')} to="/user/dashboard">Dashboard <span className="sr-only">(current)</span></Link>
+              <Link className="nav-link" style={isActive(history,'/user/dashboard')} 
+              to="/user/dashboard">Dashboard <span className="sr-only">(current)</span></Link>
             </li>
             )}
             {isAuthenticated() && isAuthenticated().user.role === 1 && (
               <li className="nav-item active">
-              <Link className="nav-link" style={isActive(history,'/admin/dashboard')} to="/admin/dashboard">AdminDashboard <span className="sr-only">(current)</span></Link>
+              <Link className="nav-link" style={isActive(history,'/admin/dashboard')} 
+              to="/admin/dashboard">AdminDashboard <span className="sr-only">(current)</span></Link>
             </li>
             )}
 

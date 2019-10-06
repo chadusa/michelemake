@@ -13,6 +13,14 @@
   min-height: 100px;
 }
 
+.cart-badge, .cart-badge:hover {
+  border-radius: 90%;
+  padding: 5px;
+  font-size: 12px;
+  font-style: initial;
+  background: #ee7752;
+}
+
 @-webkit-keyframes Gradient {
   0% {
       background-position: 0% 50%;
