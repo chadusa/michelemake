@@ -31,7 +31,7 @@ function Navbar({history}) {
               <span className="sr-only">(current)</span></Link>
             </li>
             <li className="nav-item active">
-              <Link className="nav-link" style={isActive(history,'/cart')} to="/cart">Cart {' '}
+              <Link className="nav-link" to="/cart">Cart {' '}
               <sup><small className="cart-badge">{itemTotal()}</small></sup>
               <span className="sr-only">(current)</span></Link>
             </li>

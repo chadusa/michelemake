@@ -12,7 +12,7 @@ function Cart() {
 
   useEffect(() => {
     setItems(getCart())
-  }, [run])
+  }, [run]) // items
 
   const showItems = (items) => {
     return (
@@ -30,7 +30,7 @@ function Cart() {
     )
   }
 
-  const notItemsMessag = () => (
+  const noItemsMessage = () => (
     <div>
       <h2>your cart is empty.</h2>
     <Link to="/shop"> <h4 className="text-danger">Continue shopping </h4> </Link>
@@ -42,7 +42,7 @@ function Cart() {
     className="container">
       <div className="row"> 
         <div className="card-body">
-          {items.length > 0 ? showItems(items) : notItemsMessag()}
+          {items.length > 0 ? showItems(items) : noItemsMessage()}
         </div>
         <div className="card-body">
           <h2 className="mb-4">Your cart Summary</h2>
