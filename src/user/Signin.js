@@ -90,7 +90,7 @@ function Signin() {
     className="container col-md-7 offset-3">
       {showLoading()}
       {showError()}
-      {signUpform()}
+      {signUpform()} < br />< br />< br />
       {redirectUser()}
         {/* {JSON.stringify(values)} */}
     </Layout>
